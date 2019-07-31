@@ -678,7 +678,7 @@ Transform:
   m_GameObject: {fileID: 7509516497478182547}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalScale: {x: 9, y: 9, z: 9}
   m_Children:
   - {fileID: 4946999242536825432}
   - {fileID: 4946999242342210743}
@@ -701,7 +701,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb7408f54a1e1ba43b3c05b0950cbe03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gridSize: 11
 --- !u!114 &6622841796889047672
 MonoBehaviour:
   m_ObjectHideFlags: 0
