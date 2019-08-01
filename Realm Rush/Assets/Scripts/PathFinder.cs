@@ -38,13 +38,13 @@ public class PathFinder : MonoBehaviour
 
             if (searchCenter == endWaypoint)
             {
-                print("Start and end are the same, therefore stopped running");
+                //print("Start and end are the same, therefore stopped running");
                 break;
             }
 
             QueueNewNeighbours(searchCenter);
         }
-        print("Finished pathfinding");
+        //print("Finished pathfinding");
     }
 
     private void QueueNewNeighbours(Waypoint searchCenter)
