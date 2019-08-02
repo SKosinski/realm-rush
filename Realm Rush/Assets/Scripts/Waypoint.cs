@@ -6,7 +6,8 @@ public class Waypoint : MonoBehaviour
 {
     const int gridSize = 10;
     Vector2Int gridPos;
-    [SerializeField] public bool isExplored = false;
+    public bool isExplored = false;
+    public bool isPlaceable = true;
 
     public Waypoint previousWaypoint;
 
@@ -45,5 +46,14 @@ public class Waypoint : MonoBehaviour
     {
         var topMeshRenderer = transform.Find("Top").GetComponent<MeshRenderer>();
         return topMeshRenderer.material.color;
+    }
+
+    void OnMouseOver()
+    {
+        //If your mouse hovers over the GameObject with the script attached, output this message
+        if(Input.GetMouseButtonDown(0) && isPlaceable)
+        {
+            Debug.Log("Clicked Cube " + GetGridPos());
+        }
     }
 }

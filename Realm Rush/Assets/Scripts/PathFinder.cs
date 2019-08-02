@@ -100,13 +100,18 @@ public class PathFinder : MonoBehaviour
         Waypoint currentWaypoint = endWaypoint;
         do
         {
-            path.Add(currentWaypoint);
+            SetAsPath(currentWaypoint);
             currentWaypoint = currentWaypoint.previousWaypoint;
         } while (currentWaypoint != startWaypoint);
 
-        path.Add(currentWaypoint);
-
+        SetAsPath(currentWaypoint);
         path.Reverse();
+    }
+
+    private void SetAsPath(Waypoint currentWaypoint)
+    {
+        path.Add(currentWaypoint);
+        currentWaypoint.isPlaceable = false;
     }
 
     private void LoadBlocks()

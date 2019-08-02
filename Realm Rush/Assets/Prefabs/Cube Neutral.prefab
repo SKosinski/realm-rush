@@ -39,7 +39,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1729202630}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -78,7 +78,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1729202630}
-  m_Text: -2,1
+  m_Text: 0,0
   m_OffsetZ: 0
   m_CharacterSize: 0.15
   m_LineSpacing: 1
@@ -197,6 +197,7 @@ GameObject:
   - component: {fileID: 6669946890086579344}
   - component: {fileID: 914707829}
   - component: {fileID: 6622841796889047672}
+  - component: {fileID: -4268446937133466839}
   m_Layer: 0
   m_Name: Cube Neutral
   m_TagString: Untagged
@@ -246,6 +247,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isExplored: 0
   previousWaypoint: {fileID: 0}
+--- !u!65 &-4268446937133466839
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7509516497478182547}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 18, y: 20, z: 18}
+  m_Center: {x: 0, y: -10, z: 0}
 --- !u!1001 &4379017355623093126
 PrefabInstance:
   m_ObjectHideFlags: 0
