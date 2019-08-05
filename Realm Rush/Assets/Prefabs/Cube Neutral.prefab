@@ -78,7 +78,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1729202630}
-  m_Text: 0,0
+  m_Text: -2,0
   m_OffsetZ: 0
   m_CharacterSize: 0.15
   m_LineSpacing: 1
@@ -246,6 +246,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isExplored: 0
+  isPlaceable: 1
+  tower: {fileID: 2334321429531971290, guid: 628a60bd86454ee4e8448c70112c6ba0, type: 3}
+  towers: {fileID: 0}
   previousWaypoint: {fileID: 0}
 --- !u!65 &-4268446937133466839
 BoxCollider:
