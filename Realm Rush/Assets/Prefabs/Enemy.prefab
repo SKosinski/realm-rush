@@ -63,8 +63,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71b525635059a50468db4f9eca3d73c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathFX: {fileID: 8470398141207246335, guid: 421b12a52929f544e8da51f7e7712a37, type: 3}
+  deathFX: {fileID: 8470398141207246335, guid: cd27b687a801f7a478ad2652c5189e8d, type: 3}
   hitFX: {fileID: 5540093111835709921}
+  explosionFX: {fileID: 8470398141207246335, guid: 421b12a52929f544e8da51f7e7712a37,
+    type: 3}
   health: 200
 --- !u!114 &114078703179129330
 MonoBehaviour:
@@ -79,7 +81,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   path: []
-  waitTime: 3
+  waitTime: 1
 --- !u!1 &1646541640735296
 GameObject:
   m_ObjectHideFlags: 0

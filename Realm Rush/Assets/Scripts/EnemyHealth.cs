@@ -7,6 +7,7 @@ public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] GameObject deathFX;
     [SerializeField] ParticleSystem hitFX;
+    [SerializeField] GameObject explosionFX;
     [SerializeField] int health = 200;
 
 
@@ -31,7 +32,14 @@ public class EnemyHealth : MonoBehaviour
     private void Death()
     {
         GameObject newDeathFX = Instantiate(deathFX, transform.position, Quaternion.identity);
-        //newDeathFX.transform.parent = transform;
+        newDeathFX.transform.parent = FindObjectOfType<EnemySpawner>().transform;
+        Destroy(gameObject);
+    }
+
+    public void Explode()
+    {
+        GameObject newExplosionFX = Instantiate(explosionFX, transform.position, Quaternion.identity);
+        newExplosionFX.transform.parent = FindObjectOfType<EnemySpawner>().transform;
         Destroy(gameObject);
     }
 }

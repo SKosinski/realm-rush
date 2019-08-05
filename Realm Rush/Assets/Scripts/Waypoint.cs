@@ -53,7 +53,7 @@ public class Waypoint : MonoBehaviour
         //If your mouse hovers over the GameObject with the script attached, output this message
         if(Input.GetMouseButtonDown(0) && isPlaceable)
         {
-            FindObjectOfType<TowerFactory>().PlaceATower(gameObject);
+            FindObjectOfType<TowerFactory>().PlaceATower(this);
             isPlaceable = false;
         }
     }

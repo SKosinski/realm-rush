@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,7 +8,7 @@ public class EnemyMovement : MonoBehaviour
 {
 
     [SerializeField] List<Waypoint> path;
-    [SerializeField] float waitTime = 3;
+    [SerializeField] float waitTime = 0.2f;
 
     // Start is called before the first frame update
     void Start()
@@ -18,7 +19,7 @@ public class EnemyMovement : MonoBehaviour
 
     IEnumerator FollowPath()
     {
-        //print("Starting patrol...");
+        
         yield return new WaitForSeconds(waitTime);
 
         foreach (Waypoint waypoint in path)
@@ -28,7 +29,7 @@ public class EnemyMovement : MonoBehaviour
             yield return new WaitForSeconds(waitTime);
         }
 
-        //print("Ending patrol.");
+        GetComponent<EnemyHealth>().Explode();
     }
 
     // Update is called once per frame
