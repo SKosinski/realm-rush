@@ -11,7 +11,15 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] GameObject explosionFX;
     [SerializeField] int health = 200;
     [SerializeField] int value = 20;
+    [SerializeField] AudioClip deathSFX;
+    [SerializeField] AudioClip hitSFX;
+    [SerializeField] AudioClip explosionSFX;
 
+    AudioSource audioSource;
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     void OnParticleCollision(GameObject other)
     {
@@ -21,6 +29,7 @@ public class EnemyHealth : MonoBehaviour
 
     private void Hit(GameObject other)
     {
+        audioSource.PlayOneShot(hitSFX);
         health = health - other.GetComponent<ParticlePower>().GetHitPower();
         hitFX.Play();
         //GameObject newHitFX = Instantiate(hitFX, transform.position, Quaternion.identity);
@@ -33,6 +42,7 @@ public class EnemyHealth : MonoBehaviour
 
     private void Death()
     {
+        AudioSource.PlayClipAtPoint(deathSFX, Camera.main.gameObject.transform.position);
         FindObjectOfType<Base>().AddToScore(value);
         GameObject newDeathFX = Instantiate(deathFX, transform.position, Quaternion.identity);
         newDeathFX.transform.parent = FindObjectOfType<EnemySpawner>().transform;
@@ -41,6 +51,7 @@ public class EnemyHealth : MonoBehaviour
 
     public void Explode()
     {
+        AudioSource.PlayClipAtPoint(explosionSFX, Camera.main.gameObject.transform.position);
         FindObjectOfType<Base>().TakeALife();
         GameObject newExplosionFX = Instantiate(explosionFX, transform.position, Quaternion.identity);
         newExplosionFX.transform.parent = FindObjectOfType<EnemySpawner>().transform;
